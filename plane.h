@@ -7,17 +7,19 @@
 
 #include <mutex>
 #include <vector>
+#define MAX_SEATS 2048
+
 using namespace std;
 
 
 struct Passenger{
  public:
   int id;
-  int line_number;
+  int position;
   int seat_number;
-  Passenger(int id, int line_number, int seat_number){
+  Passenger(int id, int position, int seat_number){
     this->id = id;
-    this->line_number = line_number;
+    this->position = position;
     this->seat_number = seat_number;
   }
 };
@@ -25,9 +27,18 @@ struct Passenger{
 class plane{
  private:
   vector<Passenger> passengers;
+  mutex line[MAX_SEATS];
+  mutex board_mutex;
+  condition_variable cv;
+  std::atomic_uint passengers_seated;
+  bool ready;
+ 
  public:
   explicit plane(vector<Passenger> passengers);
-  bool board();
+  unsigned int board();
+ private:
+  void go_to_seat(Passenger);
+  void begin_boarding();
 };
 
 

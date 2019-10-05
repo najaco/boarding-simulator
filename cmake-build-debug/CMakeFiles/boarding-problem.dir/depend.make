@@ -4,3 +4,6 @@
 CMakeFiles/boarding-problem.dir/main.cc.o: ../main.cc
 CMakeFiles/boarding-problem.dir/main.cc.o: ../plane.h
 
+CMakeFiles/boarding-problem.dir/plane.cc.o: ../plane.cc
+CMakeFiles/boarding-problem.dir/plane.cc.o: ../plane.h
+
