@@ -1,8 +1,6 @@
 #include <iostream>
 #include <string>
 #include <thread>
-#include <mutex>
-#include <thread>
 #include <vector>
 #include <ctime>
 #include <chrono>
@@ -11,6 +9,7 @@
 #include <atomic>
 #include <unistd.h>
 #include <condition_variable> // std::condition_variable
+#include "plane.h"
 
 using namespace std;
 #define MAX_SEATS 2048
@@ -25,11 +24,12 @@ mutex step_mutex;
 
 condition_variable cv;
 
-atomic_uint passengers_seated = 0;
+//atomic_uint passengers_seated = 0;
+unsigned int passengers_seated = 0;
 mutex board_mutex;
 bool ready = false;
 
-void go_to_seat(int, int, int);
+void go_to_seat(Passenger);
 void begin_boarding();
 
 template <typename T>
@@ -94,21 +94,30 @@ int main(int argc, char *argv[])
     {
         reverse(passenger_seat_order.begin(), passenger_seat_order.end());
     }
-
+    
+    
+    vector<Passenger> passengers;
+    for(size_t i = 0; i < passenger_seat_order.size(); i++){
+      Passenger p(passenger_seat_order[i], i, passenger_seat_order[i]);
+      passengers.push_back(p);
+    }
+#if PRINT
+  print_vector(passenger_seat_order);
+#endif
+    
+    
     start = clock();
     int n_passengers = passenger_seat_order.size();
-    thread passengers[n_passengers];
+    thread passengers_threads[n_passengers];
     //block the "door"
     seats[passenger_seat_order.size()].lock();
-#if PRINT
-    print_vector(passenger_seat_order);
-#endif
-    for (int i = 0; i < passenger_seat_order.size(); i++)
+
+    for (size_t i = 0; i < passengers.size(); i++)
     {
-        passengers[i] = thread(go_to_seat, passenger_seat_order[i], i, passenger_seat_order[i]);
+        passengers_threads[i] = thread(go_to_seat, passengers[i]);
     }
     begin_boarding();
-    for (auto &th : passengers)
+    for (auto &th : passengers_threads)
         th.join(); //join all threads
 
     duration = (clock() - start) / (double)CLOCKS_PER_SEC;
@@ -128,28 +137,27 @@ void begin_boarding()
     cv.notify_all();
 }
 
-void go_to_seat(int passenger_id, int line_number, int seat_number)
+void go_to_seat(Passenger p)
 {
     // seats[line_number].lock(); //take spot in line
-    int position = line_number;
+    int position = p.line_number;
     seats[passenger_seat_order[position]].lock(); //take spot in line
     // while (!ready)
     //     ;
     unique_lock<mutex> lk(board_mutex);
     cv.wait(lk, [] { return ready; });
     lk.unlock();
-    while (position != seat_number + passenger_seat_order.size())
+    while (position != p.seat_number + passenger_seat_order.size())
     {
         seats[position + 1].lock(); //try and take the next row position
         seats[position].unlock();   //unlock the last spot
-       // this_thread::sleep_for(chrono::milliseconds(1));
         this_thread::sleep_for(chrono::nanoseconds(1));
         position++;
     }
     seats[position].unlock();
 #if PRINT
     print_mutex.lock();
-    cout << "Passenger : " << passenger_id << " has been seated at seat: " << seat_number << endl;
+    cout << "Passenger : " << p.id << " has been seated at seat: " << p.seat_number << endl;
     print_mutex.unlock();
 #endif
     passengers_seated++;
