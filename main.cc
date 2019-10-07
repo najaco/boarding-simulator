@@ -7,21 +7,19 @@
 #include <algorithm>
 #include <random>
 #include <atomic>
+#include <fstream>
 #include <unistd.h>
 #include <condition_variable> // std::condition_variable
 #include "plane.h"
 
 using namespace std;
 #define MAX_SEATS 2048
-#define ROWS 1000
-#define SEATS_PER_ROW 1
 #define PRINT 0
 
 vector<int> passenger_seat_order;
 
 
 template <typename T>
-
 inline void print_vector(vector<T> v)
 {
   std::cout << "[ ";
@@ -37,41 +35,44 @@ int main(int argc, char *argv[])
   clock_t start;
   long double duration;
   
-  bool inorder, backwards, random;
-  inorder = backwards = random = false;
-  
+  bool file_flag, backwards, random;
+  file_flag = backwards = random = false;
+  string file_name;
   for (int i = 1; i < argc; i++)
   {
     string arg = argv[i];
-    if (arg == "-i")
-    {
-      cout << "Inorder" << endl;
-      inorder = true;
+    if(arg == "-f"){
+      if(i+1 >= argc){
+        cout << "Error. No file provided." << endl;
+        return 1;
+      }
+      file_flag = true;
+      file_name = argv[i + 1];
     }
     else if (arg == "-b")
     {
-      cout << "Backwards" << endl;
       backwards = true;
     }
     else if (arg == "-r")
     {
-      cout << "Random" << endl;
       random = true;
       break;
     }
   }
-  if (!backwards && !random)
-  {
-    inorder = true;
-  }
-  
-  for (int i = 0; i < SEATS_PER_ROW; i++)
-  {
-    for (int j = 0; j < ROWS; j++)
-    {
-      passenger_seat_order.push_back(j);
+  int x;
+  if(file_flag){
+    fstream file(file_name, ios_base::in);
+    while(file >> x){
+      passenger_seat_order.push_back(x);
+    }
+    file.close();
+  }else{
+    while(cin >> x){
+      passenger_seat_order.push_back(x);
     }
   }
+  
+  
   
   if (random)
   {
