@@ -1,16 +1,11 @@
 #include <iostream>
 #include <string>
-#include <thread>
 #include <vector>
 #include <ctime>
-#include <chrono>
 #include <algorithm>
 #include <random>
-#include <atomic>
 #include <fstream>
-#include <unistd.h>
-#include <condition_variable> // std::condition_variable
-#include "plane.h"
+#include "Plane.h"
 
 using namespace std;
 #define MAX_SEATS 2048
@@ -72,7 +67,7 @@ int main(int argc, char *argv[]) {
 #endif
   clock_t start;
   long double duration;
-  plane p(passengers);
+  Plane p(passengers);
   unsigned int passengers_seated;
   p.set_verbose(1); // Set to 1 for number of passengers seated message
   start = clock();

@@ -3,32 +3,32 @@
 //
 #include <iostream>
 #include <thread>
-#include "plane.h"
+#include "Plane.h"
 #define STEP_TIME 1
 
 mutex progress_mutex;
-plane::plane(vector<Passenger> passengers) {
+Plane::Plane(vector<Passenger> passengers) {
   this->passengers = passengers;
   ready = false;
   passengers_seated = 0;
   this->verbose = 0;
 }
-unsigned int plane::board() {
+unsigned int Plane::board() {
   vector<thread> passengers_threads;
   // block the "door"
   line[this->passengers.size()].lock();
   
   for (auto p : passengers) {
-    passengers_threads.emplace_back(thread(&plane::go_to_seat, this, p));
+    passengers_threads.emplace_back(thread(&Plane::go_to_seat, this, p));
   }
-  plane::begin_boarding();
+  Plane::begin_boarding();
   for (auto &th : passengers_threads)
     th.join(); // join all threads
   printf("\n");
   return passengers_seated;
 }
 
-void plane::go_to_seat(Passenger p) {
+void Plane::go_to_seat(Passenger p) {
   line[p.position].lock(); // take spot in line
   unique_lock<mutex> lk(board_mutex);
   cv.wait(lk);
@@ -48,7 +48,7 @@ void plane::go_to_seat(Passenger p) {
   progress_mutex.unlock();
 }
 
-void plane::begin_boarding() {
+void Plane::begin_boarding() {
   this_thread::sleep_for(chrono::milliseconds(1000));
   line[this->passengers.size()].unlock();
   ready = true;

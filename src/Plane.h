@@ -7,35 +7,24 @@
 
 #include <mutex>
 #include <vector>
+#include "Passenger.h"
 #define MAX_SEATS 2048
 
 using namespace std;
 
-struct Passenger {
- public:
-  int id;
-  int position;
-  int seat_number;
-  
-  Passenger(int id, int position, int seat_number) {
-    this->id = id;
-    this->position = position;
-    this->seat_number = seat_number;
-  }
-};
 
-class plane {
+
+class Plane {
  private:
   vector<Passenger> passengers;
   mutex line[MAX_SEATS];
   mutex board_mutex;
   condition_variable cv;
   unsigned int passengers_seated;
-  bool ready;
   int verbose;
  
  public:
-  explicit plane(vector<Passenger> passengers);
+  explicit Plane(vector<Passenger> passengers);
   unsigned int board();
   void set_verbose(int verbose) {
     this->verbose = verbose;
