@@ -19,7 +19,7 @@ if [ "$1" == "-r" ]; then
 elif [ $1 == "-s" ]; then
     seq 1000 | shuf | ./boarding-problem
 else
-    seq 1000 | /boarding-problem
+    seq 1000 | ./boarding-problem
 fi
 
 
