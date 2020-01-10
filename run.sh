@@ -1,5 +1,5 @@
 function usage {
-    echo "$0 [-irs] <number_of_passengers>"
+    echo "$0 [-h --help] [-irs] <number_of_passengers>"
     echo "--------------------------"
     printf "    %-10s|%-20s\n" "FLAG" "USE"
     echo "--------------------------"
@@ -8,17 +8,18 @@ function usage {
     printf "    %-10s|%-20s\n" "-s" "Shuffle"
     echo "--------------------------"
 }
-if [ $# -lt 2 ]; then
+if [ $# -lt 2 ] || [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
     usage
     exit 1
 fi
 number_of_passengers=$2
+make # compile if not done so
 if [ "$1" == "-r" ]; then
     seq -s"\n" $number_of_passengers -1 1 | ./boarding-problem
 elif [ $1 == "-s" ]; then
     seq 1000 | shuf | ./boarding-problem
 else
-    seq 1000 | ./boarding-problem
+    seq 1000 | /boarding-problem
 fi
 
 
