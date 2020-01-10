@@ -11,37 +11,39 @@
 
 using namespace std;
 
-
-struct Passenger{
+struct Passenger {
  public:
   int id;
   int position;
   int seat_number;
-  Passenger(int id, int position, int seat_number){
+  
+  Passenger(int id, int position, int seat_number) {
     this->id = id;
     this->position = position;
     this->seat_number = seat_number;
   }
 };
 
-class plane{
+class plane {
  private:
   vector<Passenger> passengers;
   mutex line[MAX_SEATS];
   mutex board_mutex;
   condition_variable cv;
-  std::atomic_uint passengers_seated;
+  unsigned int passengers_seated;
   bool ready;
+  int verbose;
  
  public:
   explicit plane(vector<Passenger> passengers);
   unsigned int board();
+  void set_verbose(int verbose) {
+    this->verbose = verbose;
+  }
+ 
  private:
   void go_to_seat(Passenger);
   void begin_boarding();
 };
 
-
-
-
-#endif //BOARDING_PROBLEM_PLANE_H
+#endif // BOARDING_PROBLEM_PLANE_H
