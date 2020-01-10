@@ -33,6 +33,7 @@ class Plane {
  private:
   void go_to_seat(Passenger);
   void begin_boarding();
+  inline void increment_passengers_seated();
 };
 
 #endif // BOARDING_PROBLEM_PLANE_H
