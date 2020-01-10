@@ -51,7 +51,7 @@ int main(int argc, char *argv[]) {
     string arg = argv[i];
     if (arg == "-f") {
       if (i + 1 >= argc) {
-        cout << "Egrror. No file provided." << endl;
+        cout << "Error. No file provided." << endl;
         return 1;
       }
       file_flag = true;
