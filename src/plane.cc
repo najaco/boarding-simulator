@@ -4,7 +4,8 @@
 #include <iostream>
 #include <thread>
 #include "plane.h"
-#define STEP_TIME 100
+#define STEP_TIME 1
+
 mutex progress_mutex;
 plane::plane(vector<Passenger> passengers) {
   this->passengers = passengers;
@@ -41,7 +42,7 @@ void plane::go_to_seat(Passenger p) {
   line[p.position].unlock();
   progress_mutex.lock();
   passengers_seated++;
-  if(this->verbose >= 1) {
+  if (this->verbose >= 1) {
     printf("\rPassengers Seated: %d/%lu", passengers_seated, passengers.size());
   }
   progress_mutex.unlock();

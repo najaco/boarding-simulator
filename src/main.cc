@@ -44,7 +44,6 @@ vector<int> get_order(bool file_flag,
 
 int main(int argc, char *argv[]) {
   cout << "Boarding Problem" << endl;
-
   
   bool file_flag = false;
   string file_name;
@@ -52,7 +51,7 @@ int main(int argc, char *argv[]) {
     string arg = argv[i];
     if (arg == "-f") {
       if (i + 1 >= argc) {
-        cout << "Error. No file provided." << endl;
+        cout << "Egrror. No file provided." << endl;
         return 1;
       }
       file_flag = true;
