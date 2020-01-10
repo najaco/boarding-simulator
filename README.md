@@ -4,6 +4,7 @@ Multi-threaded program that simulates the onboarding experience of airplanes.
 ## Build
 To build the project run:
 ```console
+$ cmake .
 $ make all
 ```
 
