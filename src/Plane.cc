@@ -9,7 +9,6 @@
 mutex progress_mutex;
 Plane::Plane(vector<Passenger> passengers) {
   this->passengers = passengers;
-  ready = false;
   passengers_seated = 0;
   this->verbose = 0;
 }
@@ -51,6 +50,5 @@ void Plane::go_to_seat(Passenger p) {
 void Plane::begin_boarding() {
   this_thread::sleep_for(chrono::milliseconds(1000));
   line[this->passengers.size()].unlock();
-  ready = true;
   cv.notify_all();
 }
