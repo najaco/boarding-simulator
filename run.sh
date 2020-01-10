@@ -17,9 +17,9 @@ make # compile if not done so
 if [ "$1" == "-r" ]; then
     seq -s"\n" $number_of_passengers -1 1 | ./boarding-problem
 elif [ $1 == "-s" ]; then
-    seq 1000 | shuf | ./boarding-problem
+    seq $number_of_passengers | shuf | ./boarding-problem
 else
-    seq 1000 | ./boarding-problem
+    seq $number_of_passengers | ./boarding-problem
 fi
 
 
