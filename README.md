@@ -8,7 +8,7 @@ $ make all
 ```
 
 ## Run
-If given an input file of numbers separated line by line, you can run the program by with either of the following:
+If given an input file (`input.txt`) of numbers separated line by line, you can run the program by with either of the following:
 ```console
 $ ./boarding-problem -f input.txt
 ```
@@ -25,15 +25,15 @@ $ ./run.sh [-h --help] [-irs] <number_of_passengers>
 ```
 
 #### Examples
-To run with 1000 passengers **inorder**:
+To run with *1000* passengers **inorder**:
 ```console
 $ ./run.sh -i 1000
 ```
-To run with 1000 passengers in **reverse** order:
+To run with *1000* passengers in **reverse** order:
 ```console
 $ ./run.sh -r 1000
 ```
-To run with 1000 passengers in **random** order:
+To run with *1000* passengers in **random** order:
 ```console
 $ ./run.sh -s 1000
 ```
