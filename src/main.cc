@@ -9,7 +9,6 @@
 
 using namespace std;
 #define MAX_SEATS 2048
-#define PRINT 0
 
 template<typename T>
 inline void print_vector(vector<T> v) {
