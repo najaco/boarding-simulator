@@ -123,59 +123,59 @@ boarding-problem/fast:
 	$(MAKE) -f CMakeFiles/boarding-problem.dir/build.make CMakeFiles/boarding-problem.dir/build
 .PHONY : boarding-problem/fast
 
-main.o: main.cc.o
+src/main.o: src/main.cc.o
 
-.PHONY : main.o
-
-# target to build an object file
-main.cc.o:
-	$(MAKE) -f CMakeFiles/boarding-problem.dir/build.make CMakeFiles/boarding-problem.dir/main.cc.o
-.PHONY : main.cc.o
-
-main.i: main.cc.i
-
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cc.i:
-	$(MAKE) -f CMakeFiles/boarding-problem.dir/build.make CMakeFiles/boarding-problem.dir/main.cc.i
-.PHONY : main.cc.i
-
-main.s: main.cc.s
-
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cc.s:
-	$(MAKE) -f CMakeFiles/boarding-problem.dir/build.make CMakeFiles/boarding-problem.dir/main.cc.s
-.PHONY : main.cc.s
-
-plane.o: plane.cc.o
-
-.PHONY : plane.o
+.PHONY : src/main.o
 
 # target to build an object file
-plane.cc.o:
-	$(MAKE) -f CMakeFiles/boarding-problem.dir/build.make CMakeFiles/boarding-problem.dir/plane.cc.o
-.PHONY : plane.cc.o
+src/main.cc.o:
+	$(MAKE) -f CMakeFiles/boarding-problem.dir/build.make CMakeFiles/boarding-problem.dir/src/main.cc.o
+.PHONY : src/main.cc.o
 
-plane.i: plane.cc.i
+src/main.i: src/main.cc.i
 
-.PHONY : plane.i
+.PHONY : src/main.i
 
 # target to preprocess a source file
-plane.cc.i:
-	$(MAKE) -f CMakeFiles/boarding-problem.dir/build.make CMakeFiles/boarding-problem.dir/plane.cc.i
-.PHONY : plane.cc.i
+src/main.cc.i:
+	$(MAKE) -f CMakeFiles/boarding-problem.dir/build.make CMakeFiles/boarding-problem.dir/src/main.cc.i
+.PHONY : src/main.cc.i
 
-plane.s: plane.cc.s
+src/main.s: src/main.cc.s
 
-.PHONY : plane.s
+.PHONY : src/main.s
 
 # target to generate assembly for a file
-plane.cc.s:
-	$(MAKE) -f CMakeFiles/boarding-problem.dir/build.make CMakeFiles/boarding-problem.dir/plane.cc.s
-.PHONY : plane.cc.s
+src/main.cc.s:
+	$(MAKE) -f CMakeFiles/boarding-problem.dir/build.make CMakeFiles/boarding-problem.dir/src/main.cc.s
+.PHONY : src/main.cc.s
+
+src/plane.o: src/plane.cc.o
+
+.PHONY : src/plane.o
+
+# target to build an object file
+src/plane.cc.o:
+	$(MAKE) -f CMakeFiles/boarding-problem.dir/build.make CMakeFiles/boarding-problem.dir/src/plane.cc.o
+.PHONY : src/plane.cc.o
+
+src/plane.i: src/plane.cc.i
+
+.PHONY : src/plane.i
+
+# target to preprocess a source file
+src/plane.cc.i:
+	$(MAKE) -f CMakeFiles/boarding-problem.dir/build.make CMakeFiles/boarding-problem.dir/src/plane.cc.i
+.PHONY : src/plane.cc.i
+
+src/plane.s: src/plane.cc.s
+
+.PHONY : src/plane.s
+
+# target to generate assembly for a file
+src/plane.cc.s:
+	$(MAKE) -f CMakeFiles/boarding-problem.dir/build.make CMakeFiles/boarding-problem.dir/src/plane.cc.s
+.PHONY : src/plane.cc.s
 
 # Help Target
 help:
@@ -186,12 +186,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... boarding-problem"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
-	@echo "... plane.o"
-	@echo "... plane.i"
-	@echo "... plane.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
+	@echo "... src/plane.o"
+	@echo "... src/plane.i"
+	@echo "... src/plane.s"
 .PHONY : help
 
 

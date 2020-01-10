@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/Users/nathancohen/CohenWorkspace/boarding-problem/main.cc
+/Users/nathancohen/CohenWorkspace/boarding-problem/src/main.cc
 iostream
 -
 string
@@ -32,9 +32,17 @@ unistd.h
 condition_variable
 -
 plane.h
-/Users/nathancohen/CohenWorkspace/boarding-problem/plane.h
+/Users/nathancohen/CohenWorkspace/boarding-problem/src/plane.h
 
-/Users/nathancohen/CohenWorkspace/boarding-problem/plane.h
+/Users/nathancohen/CohenWorkspace/boarding-problem/src/plane.cc
+iostream
+-
+thread
+-
+plane.h
+/Users/nathancohen/CohenWorkspace/boarding-problem/src/plane.h
+
+/Users/nathancohen/CohenWorkspace/boarding-problem/src/plane.h
 mutex
 -
 vector

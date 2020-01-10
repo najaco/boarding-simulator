@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/boarding-problem.dir/main.cc.o"
-  "CMakeFiles/boarding-problem.dir/plane.cc.o"
+  "CMakeFiles/boarding-problem.dir/src/main.cc.o"
+  "CMakeFiles/boarding-problem.dir/src/plane.cc.o"
   "boarding-problem"
   "boarding-problem.pdb"
 )

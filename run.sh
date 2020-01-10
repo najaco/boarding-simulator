@@ -14,13 +14,10 @@ if [ $# -lt 2 ]; then
 fi
 number_of_passengers=$2
 if [ "$1" == "-r" ]; then
-    echo "Reverse"
     seq -s"\n" $number_of_passengers -1 1 | ./boarding-problem
 elif [ $1 == "-s" ]; then
-    echo "Shuffle"
     seq 1000 | shuf | ./boarding-problem
 else
-    echo "Inorder"
     seq 1000 | ./boarding-problem
 fi
 

@@ -66,13 +66,13 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/nathancohen/CohenWorkspace/boarding-problem/main.cc">
+		<Unit filename="/Users/nathancohen/CohenWorkspace/boarding-problem/src/main.cc">
 			<Option target="boarding-problem"/>
 		</Unit>
-		<Unit filename="/Users/nathancohen/CohenWorkspace/boarding-problem/plane.cc">
+		<Unit filename="/Users/nathancohen/CohenWorkspace/boarding-problem/src/plane.cc">
 			<Option target="boarding-problem"/>
 		</Unit>
-		<Unit filename="/Users/nathancohen/CohenWorkspace/boarding-problem/plane.h">
+		<Unit filename="/Users/nathancohen/CohenWorkspace/boarding-problem/src/plane.h">
 			<Option target="boarding-problem"/>
 		</Unit>
 		<Unit filename="/Users/nathancohen/CohenWorkspace/boarding-problem/CMakeLists.txt">

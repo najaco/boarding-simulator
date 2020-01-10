@@ -57,42 +57,42 @@ include CMakeFiles/boarding-problem.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/boarding-problem.dir/flags.make
 
-CMakeFiles/boarding-problem.dir/main.cc.o: CMakeFiles/boarding-problem.dir/flags.make
-CMakeFiles/boarding-problem.dir/main.cc.o: main.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nathancohen/CohenWorkspace/boarding-problem/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/boarding-problem.dir/main.cc.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/boarding-problem.dir/main.cc.o -c /Users/nathancohen/CohenWorkspace/boarding-problem/main.cc
+CMakeFiles/boarding-problem.dir/src/main.cc.o: CMakeFiles/boarding-problem.dir/flags.make
+CMakeFiles/boarding-problem.dir/src/main.cc.o: src/main.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nathancohen/CohenWorkspace/boarding-problem/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/boarding-problem.dir/src/main.cc.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/boarding-problem.dir/src/main.cc.o -c /Users/nathancohen/CohenWorkspace/boarding-problem/src/main.cc
 
-CMakeFiles/boarding-problem.dir/main.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/boarding-problem.dir/main.cc.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/nathancohen/CohenWorkspace/boarding-problem/main.cc > CMakeFiles/boarding-problem.dir/main.cc.i
+CMakeFiles/boarding-problem.dir/src/main.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/boarding-problem.dir/src/main.cc.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/nathancohen/CohenWorkspace/boarding-problem/src/main.cc > CMakeFiles/boarding-problem.dir/src/main.cc.i
 
-CMakeFiles/boarding-problem.dir/main.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/boarding-problem.dir/main.cc.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/nathancohen/CohenWorkspace/boarding-problem/main.cc -o CMakeFiles/boarding-problem.dir/main.cc.s
+CMakeFiles/boarding-problem.dir/src/main.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/boarding-problem.dir/src/main.cc.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/nathancohen/CohenWorkspace/boarding-problem/src/main.cc -o CMakeFiles/boarding-problem.dir/src/main.cc.s
 
-CMakeFiles/boarding-problem.dir/plane.cc.o: CMakeFiles/boarding-problem.dir/flags.make
-CMakeFiles/boarding-problem.dir/plane.cc.o: plane.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nathancohen/CohenWorkspace/boarding-problem/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/boarding-problem.dir/plane.cc.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/boarding-problem.dir/plane.cc.o -c /Users/nathancohen/CohenWorkspace/boarding-problem/plane.cc
+CMakeFiles/boarding-problem.dir/src/plane.cc.o: CMakeFiles/boarding-problem.dir/flags.make
+CMakeFiles/boarding-problem.dir/src/plane.cc.o: src/plane.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nathancohen/CohenWorkspace/boarding-problem/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/boarding-problem.dir/src/plane.cc.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/boarding-problem.dir/src/plane.cc.o -c /Users/nathancohen/CohenWorkspace/boarding-problem/src/plane.cc
 
-CMakeFiles/boarding-problem.dir/plane.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/boarding-problem.dir/plane.cc.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/nathancohen/CohenWorkspace/boarding-problem/plane.cc > CMakeFiles/boarding-problem.dir/plane.cc.i
+CMakeFiles/boarding-problem.dir/src/plane.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/boarding-problem.dir/src/plane.cc.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/nathancohen/CohenWorkspace/boarding-problem/src/plane.cc > CMakeFiles/boarding-problem.dir/src/plane.cc.i
 
-CMakeFiles/boarding-problem.dir/plane.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/boarding-problem.dir/plane.cc.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/nathancohen/CohenWorkspace/boarding-problem/plane.cc -o CMakeFiles/boarding-problem.dir/plane.cc.s
+CMakeFiles/boarding-problem.dir/src/plane.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/boarding-problem.dir/src/plane.cc.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/nathancohen/CohenWorkspace/boarding-problem/src/plane.cc -o CMakeFiles/boarding-problem.dir/src/plane.cc.s
 
 # Object files for target boarding-problem
 boarding__problem_OBJECTS = \
-"CMakeFiles/boarding-problem.dir/main.cc.o" \
-"CMakeFiles/boarding-problem.dir/plane.cc.o"
+"CMakeFiles/boarding-problem.dir/src/main.cc.o" \
+"CMakeFiles/boarding-problem.dir/src/plane.cc.o"
 
 # External object files for target boarding-problem
 boarding__problem_EXTERNAL_OBJECTS =
 
-boarding-problem: CMakeFiles/boarding-problem.dir/main.cc.o
-boarding-problem: CMakeFiles/boarding-problem.dir/plane.cc.o
+boarding-problem: CMakeFiles/boarding-problem.dir/src/main.cc.o
+boarding-problem: CMakeFiles/boarding-problem.dir/src/plane.cc.o
 boarding-problem: CMakeFiles/boarding-problem.dir/build.make
 boarding-problem: CMakeFiles/boarding-problem.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/nathancohen/CohenWorkspace/boarding-problem/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable boarding-problem"

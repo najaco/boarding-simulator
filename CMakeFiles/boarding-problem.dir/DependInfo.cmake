@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/nathancohen/CohenWorkspace/boarding-problem/main.cc" "/Users/nathancohen/CohenWorkspace/boarding-problem/CMakeFiles/boarding-problem.dir/main.cc.o"
-  "/Users/nathancohen/CohenWorkspace/boarding-problem/plane.cc" "/Users/nathancohen/CohenWorkspace/boarding-problem/CMakeFiles/boarding-problem.dir/plane.cc.o"
+  "/Users/nathancohen/CohenWorkspace/boarding-problem/src/main.cc" "/Users/nathancohen/CohenWorkspace/boarding-problem/CMakeFiles/boarding-problem.dir/src/main.cc.o"
+  "/Users/nathancohen/CohenWorkspace/boarding-problem/src/plane.cc" "/Users/nathancohen/CohenWorkspace/boarding-problem/CMakeFiles/boarding-problem.dir/src/plane.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
