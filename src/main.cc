@@ -78,7 +78,6 @@ int main(int argc, char *argv[]) {
   start = clock();
   passengers_seated = p.board();
   duration = (clock() - start) / (long double) CLOCKS_PER_SEC;
-  cout << passengers_seated << " passengers have been seated" << endl;
   cout << "Time: " << duration << endl;
   
   return 0;
