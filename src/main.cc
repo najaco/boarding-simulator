@@ -36,23 +36,26 @@ vector<int> get_order(bool file_flag,
   
   return passenger_seat_order;
 }
+void parse_command_line_arguments(int argc, char * argv[], bool * file_flag, string * file_name){
+  for (int i = 1; i < argc; i++) {
+    string arg = argv[i];
+    if (arg == "-f") {
+      if (i + 1 >= argc) {
+        throw "File not provided";
+      }
+      *file_flag = true;
+      *file_name = argv[i + 1];
+    }
+  }
+}
 
 int main(int argc, char *argv[]) {
   cout << "Boarding Problem" << endl;
   
   bool file_flag = false;
   string file_name;
-  for (int i = 1; i < argc; i++) {
-    string arg = argv[i];
-    if (arg == "-f") {
-      if (i + 1 >= argc) {
-        cout << "Error. No file provided." << endl;
-        return 1;
-      }
-      file_flag = true;
-      file_name = argv[i + 1];
-    }
-  }
+  
+  parse_command_line_arguments(argc, argv, &file_flag, &file_name);
   
   vector<int>
       passenger_seat_order = get_order(file_flag, file_name);
@@ -62,17 +65,15 @@ int main(int argc, char *argv[]) {
     Passenger passenger(passenger_seat_order[i], i, passenger_seat_order[i]);
     passengers.push_back(passenger);
   }
-#if PRINT
-  print_vector(passenger_seat_order);
-#endif
-  clock_t start;
-  long double duration;
+  
   Plane p(passengers);
-  unsigned int passengers_seated;
   p.set_verbose(1); // Set to 1 for number of passengers seated message
-  start = clock();
-  passengers_seated = p.board();
-  duration = (clock() - start) / (long double) CLOCKS_PER_SEC;
+  
+  
+  clock_t start = clock();
+  p.board();
+  
+  long double duration = (clock() - start) / (long double) CLOCKS_PER_SEC;
   cout << "Time: " << duration << endl;
   
   return 0;
