@@ -1,4 +1,4 @@
-# boarding-problem
+# boarding-simulator
 Multi-threaded program that simulates the onboarding experience of airplanes.
 
 ## Build
